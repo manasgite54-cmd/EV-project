@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Electric Vehicle Market Performance & Insights analytics project">
+  <title>{% block title %}EV Market Insights{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="{{ url_for('home') }}"><span class="brand-mark">EV</span><span>Market Insights</span></a>
+  <nav aria-label="Main navigation">
+    <a class="{{ 'active' if active == 'overview' else '' }}" href="{{ url_for('home') }}">Overview</a>
+    <a class="{{ 'active' if active == 'dashboard' else '' }}" href="{{ url_for('dashboard') }}">Dashboard</a>
+    <a class="{{ 'active' if active == 'story' else '' }}" href="{{ url_for('story') }}">Story</a>
+    <a class="{{ 'active' if active == 'methodology' else '' }}" href="{{ url_for('methodology') }}">Methodology</a>
+  </nav>
+</header>
+<main class="container">
+{% block content %}{% endblock %}
+</main>
+<footer class="footer"><span>Electric Vehicle Market Performance &amp; Insights</span><span>Academic analytics project · verify all findings against source data</span></footer>
+</body>
+</html>

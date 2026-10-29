@@ -1,0 +1,69 @@
+
+{% extends 'base.html' %}
+{% block title %}Story | EV Market Insights{% endblock %}
+
+{% block content %}
+<section class="page-heading">
+  <div class="eyebrow">DATA STORY</div>
+  <h1>What does the EV dataset tell us?</h1>
+  <p>Explore the published Electric Vehicle Market Story.</p>
+</section>
+
+{% if tableau_url %}
+<div class="tableau-frame" style="width:100%; overflow:hidden;">
+  <tableau-viz
+    id="ev-market-story"
+    src="{{ tableau_url }}"
+    toolbar="bottom"
+    hide-tabs
+    width="100%"
+    height="850">
+  </tableau-viz>
+</div>
+
+<p>
+  If the Story does not load,
+  <a href="{{ tableau_url }}" target="_blank" rel="noopener noreferrer">
+    open it directly on Tableau Public
+  </a>.
+</p>
+{% else %}
+<div class="embed-placeholder">
+  <h2>Tableau Story not connected yet</h2>
+  <p>Configure TABLEAU_STORY_URL in your environment settings.</p>
+</div>
+{% endif %}
+
+<div class="story-grid">
+  <article class="story-card">
+    <span class="scene-number">01</span>
+    <h2>Market snapshot</h2>
+    <p>Review vehicle records, manufacturers, model years, and categories.</p>
+  </article>
+  <article class="story-card">
+    <span class="scene-number">02</span>
+    <h2>Manufacturer comparison</h2>
+    <p>Compare recorded sales values and vehicle profiles.</p>
+  </article>
+  <article class="story-card">
+    <span class="scene-number">03</span>
+    <h2>Battery &amp; range</h2>
+    <p>Explore battery types, capacity, and driving range.</p>
+  </article>
+  <article class="story-card">
+    <span class="scene-number">04</span>
+    <h2>Price &amp; customer experience</h2>
+    <p>Compare price, range, and customer ratings.</p>
+  </article>
+  <article class="story-card">
+    <span class="scene-number">05</span>
+    <h2>Geography &amp; category</h2>
+    <p>Compare manufacturing countries and vehicle categories.</p>
+  </article>
+  <article class="story-card">
+    <span class="scene-number">06</span>
+    <h2>Recommendations &amp; caveats</h2>
+    <p>Summarize findings and data limitations.</p>
+  </article>
+</div>
+{% endblock %}

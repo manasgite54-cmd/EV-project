@@ -1,0 +1,25 @@
+{
+  "input_rows": 300000,
+  "output_rows": 299999,
+  "removed_exact_duplicate_rows": 1,
+  "removed_duplicate_vehicle_id_rows_after_exact_dedup": 0,
+  "removed_rows_missing_vehicle_id": 0,
+  "missing_cells_before_cleaning": 28507,
+  "missing_cells_after_cleaning": 28507,
+  "unique_vehicle_ids": 299999,
+  "columns_before_cleaning": 38,
+  "columns_after_cleaning": 39,
+  "missing_by_column": {
+    "battery_cycle_life": 5814,
+    "resale_value_pct_3yr": 9160,
+    "infotainment_screen_inch": 4608,
+    "annual_sales_units": 3017,
+    "customer_rating": 5908
+  },
+  "source_split_counts": {
+    "train": 199999,
+    "test": 100000
+  },
+  "database_rows_loaded": 299999,
+  "database_type": "sqlite"
+}
